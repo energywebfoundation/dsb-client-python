@@ -26,8 +26,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_create_channel_dto.py
-test/test_default_api.py
-test/test_message_dto.py
-test/test_publish_message_dto.py
 tox.ini
