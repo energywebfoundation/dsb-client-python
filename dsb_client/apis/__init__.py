@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.default_api import DefaultApi
+#   from .api.auth_api import AuthApi
 #
 # or import this package, but before doing it, use:
 #
@@ -14,4 +14,7 @@
 #   sys.setrecursionlimit(n)
 
 # Import APIs into API package:
-from dsb_client.api.default_api import DefaultApi
+from dsb_client.api.auth_api import AuthApi
+from dsb_client.api.channel_api import ChannelApi
+from dsb_client.api.health_api import HealthApi
+from dsb_client.api.message_api import MessageApi
