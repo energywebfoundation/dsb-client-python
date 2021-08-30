@@ -84,6 +84,7 @@ class PublishMessageDto(ModelNormal):
             'fqcn': (str,),  # noqa: E501
             'payload': (str,),  # noqa: E501
             'signature': (str,),  # noqa: E501
+            'topic': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -95,6 +96,7 @@ class PublishMessageDto(ModelNormal):
         'fqcn': 'fqcn',  # noqa: E501
         'payload': 'payload',  # noqa: E501
         'signature': 'signature',  # noqa: E501
+        'topic': 'topic',  # noqa: E501
     }
 
     read_only_vars = {
@@ -108,7 +110,7 @@ class PublishMessageDto(ModelNormal):
         """PublishMessageDto - a model defined in OpenAPI
 
         Args:
-            fqcn (str): Fully qualified channel name (fcqn)
+            fqcn (str): Fully Qualified Channel Name (fcqn)
             payload (str): Any stringified payload like JSON, BASE64 etc
             signature (str): Compacted EcdsaSecp256k1Signature2019
 
@@ -143,6 +145,7 @@ class PublishMessageDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            topic (str): Topic name of the channel (default value is \"default\"). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -197,7 +200,7 @@ class PublishMessageDto(ModelNormal):
         """PublishMessageDto - a model defined in OpenAPI
 
         Args:
-            fqcn (str): Fully qualified channel name (fcqn)
+            fqcn (str): Fully Qualified Channel Name (fcqn)
             payload (str): Any stringified payload like JSON, BASE64 etc
             signature (str): Compacted EcdsaSecp256k1Signature2019
 
@@ -232,6 +235,7 @@ class PublishMessageDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            topic (str): Topic name of the channel (default value is \"default\"). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

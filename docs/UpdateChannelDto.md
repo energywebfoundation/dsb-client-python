@@ -1,4 +1,4 @@
-# CreateChannelDto
+# UpdateChannelDto
 
 
 ## Properties
