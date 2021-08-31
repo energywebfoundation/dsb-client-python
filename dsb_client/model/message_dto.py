@@ -86,7 +86,7 @@ class MessageDto(ModelNormal):
             'payload': (str,),  # noqa: E501
             'signature': (str,),  # noqa: E501
             'sender': (str,),  # noqa: E501
-            'timestamp_nanos': (str,),  # noqa: E501
+            'timestamp_nanos': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -119,7 +119,7 @@ class MessageDto(ModelNormal):
             payload (str): Any stringified payload like JSON, BASE64 etc
             signature (str): Compacted EcdsaSecp256k1Signature2019
             sender (str): Sender of the message
-            timestamp_nanos (str): Message published timestamp in nanoseconds
+            timestamp_nanos (float): Message published timestamp in nanoseconds
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -214,7 +214,7 @@ class MessageDto(ModelNormal):
             payload (str): Any stringified payload like JSON, BASE64 etc
             signature (str): Compacted EcdsaSecp256k1Signature2019
             sender (str): Sender of the message
-            timestamp_nanos (str): Message published timestamp in nanoseconds
+            timestamp_nanos (float): Message published timestamp in nanoseconds
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
