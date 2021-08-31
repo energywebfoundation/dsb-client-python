@@ -3,10 +3,7 @@ Python client for use with the Energy Web DSB Message Broker. Some understanding
 of the DSB is required (DID-based authentication via Energy Web Switchboard) and
 can be found in the documentation on https://github.com/energywebfoundation/dsb.
 
-This client was generated from the DSB Message Broker's Swagger documentation.
-An additional (thin) client was written to wrap the generated `swagger_client`
-and provide a cleaner API (mostly in keeping with previous versions of this
-client).
+This client was generated from the DSB Message Broker's Swagger documentation available here [schema](https://github.com/energywebfoundation/dsb/blob/master/specs/schema.yaml)
 
 To get started with the client:
 ```sh
