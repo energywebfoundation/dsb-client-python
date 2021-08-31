@@ -10,7 +10,7 @@
 """
 
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
 # import ApiClient
 from dsb_client.api_client import ApiClient
