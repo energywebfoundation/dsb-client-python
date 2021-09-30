@@ -87,6 +87,7 @@ class MessageDto(ModelNormal):
             'signature': (str,),  # noqa: E501
             'sender': (str,),  # noqa: E501
             'timestamp_nanos': (float,),  # noqa: E501
+            'correlation_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -101,6 +102,7 @@ class MessageDto(ModelNormal):
         'signature': 'signature',  # noqa: E501
         'sender': 'sender',  # noqa: E501
         'timestamp_nanos': 'timestampNanos',  # noqa: E501
+        'correlation_id': 'correlationId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,6 +154,7 @@ class MessageDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            correlation_id (str): Correlation id used for message de duplication and correlation purposes. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -247,6 +250,7 @@ class MessageDto(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            correlation_id (str): Correlation id used for message de duplication and correlation purposes. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

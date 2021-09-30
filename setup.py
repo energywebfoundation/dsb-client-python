@@ -11,7 +11,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "dsb-client"
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -22,7 +22,7 @@ VERSION = "1.1.0"
 REQUIRES = [
     "urllib3 >= 1.25.3",
     "python-dateutil",
-    "eth-keys",
+    "eth_keys >= 0.3.3",
     "cytoolz",
     "pysha3"
 ]
