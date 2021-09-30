@@ -13,6 +13,7 @@ docs/LoginReturnDataDTO.md
 docs/MessageApi.md
 docs/MessageDto.md
 docs/PublishMessageDto.md
+docs/RootApi.md
 docs/UpdateChannelDto.md
 dsb_client/__init__.py
 dsb_client/api/__init__.py
@@ -20,6 +21,7 @@ dsb_client/api/auth_api.py
 dsb_client/api/channel_api.py
 dsb_client/api/health_api.py
 dsb_client/api/message_api.py
+dsb_client/api/root_api.py
 dsb_client/api_client.py
 dsb_client/apis/__init__.py
 dsb_client/configuration.py
@@ -42,5 +44,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_message_dto.py
+test/test_root_api.py
 tox.ini

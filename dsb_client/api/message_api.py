@@ -52,10 +52,12 @@ class MessageApi(object):
             >>> result = thread.get()
 
             Args:
-                fqcn (bool, date, datetime, dict, float, int, list, str, none_type): Fully Qualified Channel Name (fqcn)
+                fqcn (str): Fully Qualified Channel Name (fqcn)
 
             Keyword Args:
-                amount (bool, date, datetime, dict, float, int, list, str, none_type): Amount of messages to be returned in the request, default value is 100. [optional]
+                amount (str): Amount of messages to be returned in the request, default value is 100. [optional]
+                _from (str): Rewinds the channel and retruns messages from given point in time. [optional]
+                client_id (str): Id of the persistent client, default value is ``. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -119,6 +121,8 @@ class MessageApi(object):
                 'all': [
                     'fqcn',
                     'amount',
+                    '_from',
+                    'client_id',
                 ],
                 'required': [
                     'fqcn',
@@ -137,17 +141,25 @@ class MessageApi(object):
                 },
                 'openapi_types': {
                     'fqcn':
-                        (bool, date, datetime, dict, float, int, list, str, none_type,),
+                        (str,),
                     'amount':
-                        (bool, date, datetime, dict, float, int, list, str, none_type,),
+                        (str,),
+                    '_from':
+                        (str,),
+                    'client_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'fqcn': 'fqcn',
                     'amount': 'amount',
+                    '_from': 'from',
+                    'client_id': 'clientId',
                 },
                 'location_map': {
                     'fqcn': 'query',
                     'amount': 'query',
+                    '_from': 'query',
+                    'client_id': 'query',
                 },
                 'collection_format_map': {
                 }

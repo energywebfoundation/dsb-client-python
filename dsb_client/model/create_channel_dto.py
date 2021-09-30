@@ -58,6 +58,9 @@ class CreateChannelDto(ModelNormal):
     }
 
     validations = {
+        ('max_msg_size',): {
+            'inclusive_maximum': 8388608,
+        },
     }
 
     @cached_property
@@ -154,7 +157,7 @@ class CreateChannelDto(ModelNormal):
             publishers ([str]): A mixed array of DIDs and roles that have permission to publish messages to the channel. If it is omitted, any user with \"user\" role can publish messages to the channel.. [optional]  # noqa: E501
             subscribers ([str]): A mixed array of DIDs and roles that have permission to subscribe to the channel. If it is omitted, any user with \"user\" role can subscribe to the channel.. [optional]  # noqa: E501
             max_msg_age (float): Maximum age of any message in the channel, expressed in nanoseconds.. [optional]  # noqa: E501
-            max_msg_size (float): Maximum size of any message in the channel, expressed in bytes.. [optional]  # noqa: E501
+            max_msg_size (float): Maximum size of any message in the channel, expressed in bytes. Maximum value is 8388608 bytes (8Mb). [optional] if omitted the server will use the default value of 1048576  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,7 +248,7 @@ class CreateChannelDto(ModelNormal):
             publishers ([str]): A mixed array of DIDs and roles that have permission to publish messages to the channel. If it is omitted, any user with \"user\" role can publish messages to the channel.. [optional]  # noqa: E501
             subscribers ([str]): A mixed array of DIDs and roles that have permission to subscribe to the channel. If it is omitted, any user with \"user\" role can subscribe to the channel.. [optional]  # noqa: E501
             max_msg_age (float): Maximum age of any message in the channel, expressed in nanoseconds.. [optional]  # noqa: E501
-            max_msg_size (float): Maximum size of any message in the channel, expressed in bytes.. [optional]  # noqa: E501
+            max_msg_size (float): Maximum size of any message in the channel, expressed in bytes. Maximum value is 8388608 bytes (8Mb). [optional] if omitted the server will use the default value of 1048576  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
