@@ -1,6 +1,8 @@
 import base64
 import binascii
 from eth_keys import keys
+from web3.auto import w3
+from eth_account.messages import encode_defunct
 
 
 class Crypto:
@@ -38,11 +40,11 @@ class Crypto:
         return hex_string.replace('0x', '')
 
     def get_identity_token(self, did: str, private_key: str) -> str:
-        """Sign a message with a private key
+        """Get a signed proof of your identity to sign into DSB
 
         Parameters
         ----------
-        payload : str
+        did : str
         private_key : str
 
         Returns
@@ -61,3 +63,19 @@ class Crypto:
 
         jwt_token: str = "".join([encoded_header, '.', encoded_payload, '.', encoded_signature])
         return jwt_token
+
+    def get_payload_signature(self, payload: str, private_key: str) -> str:
+        """Sign a message with a private key
+
+        Parameters
+        ----------
+        payload : str
+        private_key : str
+
+        Returns
+        -------
+        str
+        """
+        message = encode_defunct(text=payload)
+        signed_message = w3.eth.account.sign_message(message, private_key=private_key)
+        return signed_message.signature.hex()
