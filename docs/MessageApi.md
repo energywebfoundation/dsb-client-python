@@ -35,8 +35,10 @@ configuration = dsb_client.Configuration(
 with dsb_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = message_api.MessageApi(api_client)
-    fqcn = None # bool, date, datetime, dict, float, int, list, str, none_type | Fully Qualified Channel Name (fqcn)
-    amount = None # bool, date, datetime, dict, float, int, list, str, none_type | Amount of messages to be returned in the request, default value is 100 (optional)
+    fqcn = "testChannel.channels.dsb.apps.energyweb.iam.ewc" # str | Fully Qualified Channel Name (fqcn)
+    amount = "100" # str | Amount of messages to be returned in the request, default value is 100 (optional)
+    _from = "2021-09-06T00:00:00Z" # str | Rewinds the channel and retruns messages from given point in time (optional)
+    client_id = "default" # str | Id of the persistent client, default value is `` (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -48,7 +50,7 @@ with dsb_client.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.message_controller_get_new_from_channel(fqcn, amount=amount)
+        api_response = api_instance.message_controller_get_new_from_channel(fqcn, amount=amount, _from=_from, client_id=client_id)
         pprint(api_response)
     except dsb_client.ApiException as e:
         print("Exception when calling MessageApi->message_controller_get_new_from_channel: %s\n" % e)
@@ -59,8 +61,10 @@ with dsb_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fqcn** | **bool, date, datetime, dict, float, int, list, str, none_type**| Fully Qualified Channel Name (fqcn) |
- **amount** | **bool, date, datetime, dict, float, int, list, str, none_type**| Amount of messages to be returned in the request, default value is 100 | [optional]
+ **fqcn** | **str**| Fully Qualified Channel Name (fqcn) |
+ **amount** | **str**| Amount of messages to be returned in the request, default value is 100 | [optional]
+ **_from** | **str**| Rewinds the channel and retruns messages from given point in time | [optional]
+ **client_id** | **str**| Id of the persistent client, default value is &#x60;&#x60; | [optional]
 
 ### Return type
 
@@ -113,6 +117,7 @@ with dsb_client.ApiClient(configuration) as api_client:
     publish_message_dto = PublishMessageDto(
         fqcn="testChannel.channels.dsb.apps.energyweb.iam.ewc",
         topic="testTopic",
+        correlation_id="b5e2eece-b39f-486d-9513-4cadc9a59a18",
         payload="{"data": "testData"}",
         signature="signature_example",
     ) # PublishMessageDto | 

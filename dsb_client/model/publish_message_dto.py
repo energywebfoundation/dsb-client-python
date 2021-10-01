@@ -85,6 +85,7 @@ class PublishMessageDto(ModelNormal):
             'payload': (str,),  # noqa: E501
             'signature': (str,),  # noqa: E501
             'topic': (str,),  # noqa: E501
+            'correlation_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -97,6 +98,7 @@ class PublishMessageDto(ModelNormal):
         'payload': 'payload',  # noqa: E501
         'signature': 'signature',  # noqa: E501
         'topic': 'topic',  # noqa: E501
+        'correlation_id': 'correlationId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,6 +148,7 @@ class PublishMessageDto(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             topic (str): Topic name of the channel (default value is \"default\"). [optional]  # noqa: E501
+            correlation_id (str): Correlation id used for message de duplication and correlation purposes. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,6 +239,7 @@ class PublishMessageDto(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             topic (str): Topic name of the channel (default value is \"default\"). [optional]  # noqa: E501
+            correlation_id (str): Correlation id used for message de duplication and correlation purposes. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
