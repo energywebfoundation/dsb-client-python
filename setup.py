@@ -20,8 +20,11 @@ VERSION = "1.2.0"
 # http://pypi.python.org/pypi/setuptools
 
 REQUIRES = [
-  "urllib3 >= 1.25.3",
-  "python-dateutil",
+    "urllib3 >= 1.25.3",
+    "python-dateutil",
+    "eth-keys",
+    "cytoolz",
+    "pysha3"
 ]
 
 setup(
