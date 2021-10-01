@@ -22,11 +22,11 @@ VERSION = "1.2.0"
 REQUIRES = [
     "urllib3 >= 1.25.3",
     "python-dateutil",
-    "eth_keys >= 0.3.3",
-    "eth-account >= 0.5.6",
-    "web3 >= 5.24.0",
+    "eth-keys",
     "cytoolz",
     "pysha3"
+    "eth-account >= 0.5.6",
+    "web3 >= 5.24.0",
 ]
 
 setup(
