@@ -18,3 +18,4 @@ from dsb_client.api.auth_api import AuthApi
 from dsb_client.api.channel_api import ChannelApi
 from dsb_client.api.health_api import HealthApi
 from dsb_client.api.message_api import MessageApi
+from dsb_client.api.root_api import RootApi

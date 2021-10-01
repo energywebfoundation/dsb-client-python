@@ -120,6 +120,7 @@ Class | Method | HTTP request | Description
 *HealthApi* | [**health_controller_check**](docs/HealthApi.md#health_controller_check) | **GET** /health |
 *MessageApi* | [**message_controller_get_new_from_channel**](docs/MessageApi.md#message_controller_get_new_from_channel) | **GET** /message |
 *MessageApi* | [**message_controller_publish**](docs/MessageApi.md#message_controller_publish) | **POST** /message |
+*RootApi* | [**app_controller_get_accessible_channels**](docs/RootApi.md#app_controller_get_accessible_channels) | **GET** / |
 
 
 ## Documentation For Models

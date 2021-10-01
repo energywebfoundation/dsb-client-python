@@ -40,7 +40,7 @@ with dsb_client.ApiClient(configuration) as api_client:
     api_instance = channel_api.ChannelApi(api_client)
     create_channel_dto = CreateChannelDto(
         fqcn="testChannel.channels.dsb.apps.energyweb.iam.ewc",
-        topics=[{"namespace":"testTopic","schema":"{\"type\": \"object\",\"properties\": {\"data\": {\"type\": \"string\"}},\"required\": [\"data\"],\"additionalProperties\": false}"}],
+        topics=[{"namespace":"testTopic","schemaType":"JSD-7","schema":"{\"type\": \"object\",\"properties\": {\"data\": {\"type\": \"string\"}},\"required\": [\"data\"],\"additionalProperties\": false}"}],
         admins=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52"],
         publishers=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52","user.roles.dsb.apps.energyweb.iam.ewc"],
         subscribers=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52","user.roles.dsb.apps.energyweb.iam.ewc"],
@@ -301,7 +301,7 @@ with dsb_client.ApiClient(configuration) as api_client:
     api_instance = channel_api.ChannelApi(api_client)
     update_channel_dto = UpdateChannelDto(
         fqcn="testChannel.channels.dsb.apps.energyweb.iam.ewc",
-        topics=[{"namespace":"testTopic","schema":"{\"type\": \"object\",\"properties\": {\"data\": {\"type\": \"string\"}},\"required\": [\"data\"],\"additionalProperties\": false}"}],
+        topics=[{"namespace":"testTopic","schemaType":"JSD-7","schema":"{\"type\": \"object\",\"properties\": {\"data\": {\"type\": \"string\"}},\"required\": [\"data\"],\"additionalProperties\": false}"}],
         admins=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52"],
         publishers=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52","user.roles.dsb.apps.energyweb.iam.ewc"],
         subscribers=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52","user.roles.dsb.apps.energyweb.iam.ewc"],
