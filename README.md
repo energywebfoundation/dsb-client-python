@@ -96,7 +96,7 @@ with dsb_client.ApiClient(configuration) as api_client:
     api_instance = auth_api.AuthApi(api_client)
     login_data_dto = LoginDataDTO(
         identity_token="identity_token_example",
-    ) # LoginDataDTO | 
+    ) # LoginDataDTO |
 
     try:
         api_response = api_instance.auth_controller_login(login_data_dto)
@@ -111,16 +111,16 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthApi* | [**auth_controller_login**](docs/AuthApi.md#auth_controller_login) | **POST** /auth/login | 
-*ChannelApi* | [**channel_controller_create_channel**](docs/ChannelApi.md#channel_controller_create_channel) | **POST** /channel | 
-*ChannelApi* | [**channel_controller_get_accessible_channels**](docs/ChannelApi.md#channel_controller_get_accessible_channels) | **GET** /channel/pubsub | 
-*ChannelApi* | [**channel_controller_get_channel**](docs/ChannelApi.md#channel_controller_get_channel) | **GET** /channel/{fqcn} | 
-*ChannelApi* | [**channel_controller_remove_channel**](docs/ChannelApi.md#channel_controller_remove_channel) | **DELETE** /channel/{fqcn} | 
-*ChannelApi* | [**channel_controller_update_channel**](docs/ChannelApi.md#channel_controller_update_channel) | **PATCH** /channel | 
-*HealthApi* | [**health_controller_check**](docs/HealthApi.md#health_controller_check) | **GET** /health | 
-*MessageApi* | [**message_controller_get_new_from_channel**](docs/MessageApi.md#message_controller_get_new_from_channel) | **GET** /message | 
-*MessageApi* | [**message_controller_publish**](docs/MessageApi.md#message_controller_publish) | **POST** /message | 
-*RootApi* | [**app_controller_get_accessible_channels**](docs/RootApi.md#app_controller_get_accessible_channels) | **GET** / | 
+*AuthApi* | [**auth_controller_login**](docs/AuthApi.md#auth_controller_login) | **POST** /auth/login |
+*ChannelApi* | [**channel_controller_create_channel**](docs/ChannelApi.md#channel_controller_create_channel) | **POST** /channel |
+*ChannelApi* | [**channel_controller_get_accessible_channels**](docs/ChannelApi.md#channel_controller_get_accessible_channels) | **GET** /channel/pubsub |
+*ChannelApi* | [**channel_controller_get_channel**](docs/ChannelApi.md#channel_controller_get_channel) | **GET** /channel/{fqcn} |
+*ChannelApi* | [**channel_controller_remove_channel**](docs/ChannelApi.md#channel_controller_remove_channel) | **DELETE** /channel/{fqcn} |
+*ChannelApi* | [**channel_controller_update_channel**](docs/ChannelApi.md#channel_controller_update_channel) | **PATCH** /channel |
+*HealthApi* | [**health_controller_check**](docs/HealthApi.md#health_controller_check) | **GET** /health |
+*MessageApi* | [**message_controller_get_new_from_channel**](docs/MessageApi.md#message_controller_get_new_from_channel) | **GET** /message |
+*MessageApi* | [**message_controller_publish**](docs/MessageApi.md#message_controller_publish) | **POST** /message |
+*RootApi* | [**app_controller_get_accessible_channels**](docs/RootApi.md#app_controller_get_accessible_channels) | **GET** / |
 
 
 ## Documentation For Models
@@ -166,4 +166,3 @@ import dsb_client
 from dsb_client.apis import *
 from dsb_client.models import *
 ```
-

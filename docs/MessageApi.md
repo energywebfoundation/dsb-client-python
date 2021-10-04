@@ -4,8 +4,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**message_controller_get_new_from_channel**](MessageApi.md#message_controller_get_new_from_channel) | **GET** /message | 
-[**message_controller_publish**](MessageApi.md#message_controller_publish) | **POST** /message | 
+[**message_controller_get_new_from_channel**](MessageApi.md#message_controller_get_new_from_channel) | **GET** /message |
+[**message_controller_publish**](MessageApi.md#message_controller_publish) | **POST** /message |
 
 
 # **message_controller_get_new_from_channel**
@@ -120,7 +120,7 @@ with dsb_client.ApiClient(configuration) as api_client:
         correlation_id="b5e2eece-b39f-486d-9513-4cadc9a59a18",
         payload="{"data": "testData"}",
         signature="signature_example",
-    ) # PublishMessageDto | 
+    ) # PublishMessageDto |
 
     # example passing only required values which don't have defaults set
     try:
@@ -157,4 +157,3 @@ Name | Type | Description  | Notes
 **202** | Published message ID in the specified channel |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

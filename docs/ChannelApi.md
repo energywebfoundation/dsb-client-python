@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**channel_controller_create_channel**](ChannelApi.md#channel_controller_create_channel) | **POST** /channel | 
-[**channel_controller_get_accessible_channels**](ChannelApi.md#channel_controller_get_accessible_channels) | **GET** /channel/pubsub | 
-[**channel_controller_get_channel**](ChannelApi.md#channel_controller_get_channel) | **GET** /channel/{fqcn} | 
-[**channel_controller_remove_channel**](ChannelApi.md#channel_controller_remove_channel) | **DELETE** /channel/{fqcn} | 
-[**channel_controller_update_channel**](ChannelApi.md#channel_controller_update_channel) | **PATCH** /channel | 
+[**channel_controller_create_channel**](ChannelApi.md#channel_controller_create_channel) | **POST** /channel |
+[**channel_controller_get_accessible_channels**](ChannelApi.md#channel_controller_get_accessible_channels) | **GET** /channel/pubsub |
+[**channel_controller_get_channel**](ChannelApi.md#channel_controller_get_channel) | **GET** /channel/{fqcn} |
+[**channel_controller_remove_channel**](ChannelApi.md#channel_controller_remove_channel) | **DELETE** /channel/{fqcn} |
+[**channel_controller_update_channel**](ChannelApi.md#channel_controller_update_channel) | **PATCH** /channel |
 
 
 # **channel_controller_create_channel**
@@ -46,7 +46,7 @@ with dsb_client.ApiClient(configuration) as api_client:
         subscribers=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52","user.roles.dsb.apps.energyweb.iam.ewc"],
         max_msg_age=86400000000000,
         max_msg_size=1048576,
-    ) # CreateChannelDto | 
+    ) # CreateChannelDto |
 
     # example passing only required values which don't have defaults set
     try:
@@ -307,7 +307,7 @@ with dsb_client.ApiClient(configuration) as api_client:
         subscribers=["did:ethr:0x5aEa5Bf5c5b341A0BFhryv5b51b77Fb9807F1b52","user.roles.dsb.apps.energyweb.iam.ewc"],
         max_msg_age=86400000000000,
         max_msg_size=1048576,
-    ) # UpdateChannelDto | 
+    ) # UpdateChannelDto |
 
     # example passing only required values which don't have defaults set
     try:
@@ -344,4 +344,3 @@ Name | Type | Description  | Notes
 **202** | Update result |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
