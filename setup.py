@@ -24,10 +24,7 @@ REQUIRES = [
     "python-dateutil",
     "eth-keys",
     "cytoolz",
-    "pysha3",
-    "eth-account >= 0.5.6",
-    "web3 == 5.11.1",
-    "ipfshttpclient == 0.6.1"
+    "pysha3"
 ]
 
 setup(

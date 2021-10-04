@@ -1,11 +1,11 @@
 import base64
 import binascii
 from eth_keys import keys
-from web3.auto import w3
-from eth_account.messages import encode_defunct
 
 
 class Crypto:
+
+    message_prefix = '\x19Ethereum Signed Message:\n'
 
     def __base64_url_encode(self, string):
         """Removes any `=` used as padding from the encoded string.
@@ -65,7 +65,7 @@ class Crypto:
         return jwt_token
 
     def get_payload_signature(self, payload: str, private_key: str) -> str:
-        """Sign a message with a private key
+        """Sign a message payload with a private key
 
         Parameters
         ----------
@@ -76,6 +76,35 @@ class Crypto:
         -------
         str
         """
-        message = encode_defunct(text=payload)
-        signed_message = w3.eth.account.sign_message(message, private_key=private_key)
-        return signed_message.signature.hex()
+        signer = keys.PrivateKey(binascii.unhexlify(self.ensure_not_0x(private_key)))
+        message = f'{self.message_prefix}{len(payload)}{payload}'
+        return signer.sign_msg(message.encode()).__str__()
+
+    def verify_payload_signature(self, payload: str, signature: str, expected_did: str) -> bool:
+        """Verifies a message payload was signed by the stated DID
+
+        Parameters
+        ----------
+        payload : str
+        signature : str
+        expected_did : str
+
+        Returns
+        -------
+        str
+        """
+        no_prefix_sig = self.ensure_not_0x(signature)
+        v = int(no_prefix_sig[128:], 16)
+        r = int(no_prefix_sig[:64], 16)
+        s = int(no_prefix_sig[64:128], 16)
+        # only support ethereum recovery param (27 or 28) for now
+        vrs = (v if v <= 1 else v - 27,
+               r,
+               s)
+        verifier = keys.Signature(vrs=vrs)
+        message = f'{self.message_prefix}{len(payload)}{payload}'
+        public_key = verifier.recover_public_key_from_msg(message.encode())
+        # note: simplified for now
+        # pubkey address might not equal did (e.g. delegated identity)
+        # did might not necessarily use ethr method
+        return f'did:ethr:{public_key.to_checksum_address()}' == expected_did
